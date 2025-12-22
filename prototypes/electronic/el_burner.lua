@@ -118,7 +118,7 @@ data:extend({
         type = 'generator',
         icon = sprite('kerosene_entity_icon.png'),
         icon_size = 64,
-        flags = {"player-creation","placeable-neutral", "not-rotatable"},
+        flags = {"player-creation","placeable-neutral"},--, "not-rotatable"},
         --minable
         minable = {
             mining_time = 1,
@@ -164,6 +164,7 @@ data:extend({
             minimum_temperature = 0,
         },
         --animation
+
         vertical_animation = {
             filename = sprite('kerosene_entity_animation.png'),
             size = {420,448},
@@ -192,7 +193,7 @@ data:extend({
             sound = { filename = "__base__/sound/furnace.ogg" },
             apparent_volume = 1.5,
         },
-        smoke = {
+        --[[smoke = {
             {
                 name = 'smoke',
                 tape = 'trival-smoke',
@@ -201,6 +202,29 @@ data:extend({
                 --deviation = {x = -2, y = -2},
                 duration = 0.5,
             },
+        },]]
+        smoke = {
+            {
+                name = "smoke",
+                type = "trivial-smoke",
+                frequency = 0.5,
+                has_8_directions = true,
+
+                north_position = {-0.6, -2.2},
+                south_position = {-0.6, -2.2},
+                east_position  = {-0.6, -2.2},
+                west_position  = {-0.6, -2.2},
+
+                -- Opcional (si usas diagonales)
+                --north_east_position = { 1.8, -1.8},
+                --south_east_position = { 1.8,  1.8},
+                --south_west_position = {-1.8,  1.8},
+                --north_west_position = {-1.8, -1.8},
+
+                --deviation = {0.2, 0.2},
+                duration = 0.5,
+            }
         },
+
     },
 })
